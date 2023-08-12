@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM',
+                          branches: [[name: 'main']],
+                          doGenerateSubmoduleConfigurations: false,
+                          extensions: [],
+                          submoduleCfg: [],
+                          userRemoteConfigs: [[url: 'https://github.com/BohdanUKR/Group-Devops.git']]
+                ])
+            }
+        }
+        
+        stage('Deliver') {
+            steps {
+                // Use this stage to release your artifact using your project's build tool
+                sh 'npm start' // Replace with your actual release command
+            }
+        }
+        
+        stage('Deploy to Dev Environment') {
+            steps {
+                echo 'Mock deployment to Development Environment'
+            }
+        }
+        
+        stage('Deploy to QAT Environment') {
+            steps {
+                echo 'Mock deployment to QAT (Quality Assurance Testing) Environment'
+            }
+        }
+        
+        stage('Deploy to Staging Environment') {
+            steps {
+                echo 'Mock deployment to Staging Environment'
+            }
+        }
+        
+        stage('Deploy to Production Environment') {
+            steps {
+                echo 'Mock deployment to Production Environment'
+            }
+        }
+    }
+    
+    post {
+        success {
+            // Perform any post-deployment actions specific to the deployment pipeline
+        }
+    }
+}
