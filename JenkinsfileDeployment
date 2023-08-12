@@ -26,7 +26,14 @@ pipeline {
                 // Use this stage to release your artifact using your project's build tool
                 bat 'npm install'
 
-                bat 'npm start' // Replace with your actual release command
+                bat 'start /B npm start' // Replace with your actual release command
+
+                timeout(time: 10, unit: 'SECONDS') {
+                    // You can add additional steps after giving the application some time to start
+                    // For example, you might want to run tests or other tasks that depend on the application running
+
+                    // Once you're done with the additional steps, you can proceed to the next stages
+                }
             }
         }
         
