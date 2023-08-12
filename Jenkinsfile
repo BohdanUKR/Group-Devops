@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+    NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+}
+
     tools {
         nodejs "NodeJS" // Replace with the actual name
     }
