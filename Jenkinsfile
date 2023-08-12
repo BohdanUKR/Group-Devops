@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+    NPM_CONFIG_CACHE = "${WORKSPACE}/.npm-cache"
 }
 
     tools {
@@ -25,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Use Node.js image to build the project
-                sh 'npm install'
+                sh 'npm install --cache .npm-cache'
             }
         }
         
