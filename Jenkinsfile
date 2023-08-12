@@ -41,6 +41,7 @@ pipeline {
     post {
         success {
             // You can add post-build steps here, such as artifact archiving
+            echo "Pipeline completed successfully"
         }
     }
 }
