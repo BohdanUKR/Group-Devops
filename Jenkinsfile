@@ -25,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Use Node.js image to build the project
-                sh 'npm install --cache .npm-cache'
+                bat 'npm install --cache .npm-cache'
             }
         }
         
