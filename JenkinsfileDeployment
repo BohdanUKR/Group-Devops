@@ -24,7 +24,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 // Use this stage to release your artifact using your project's build tool
-                sh 'npm start' // Replace with your actual release command
+                bat 'npm start' // Replace with your actual release command
             }
         }
         
@@ -56,6 +56,7 @@ pipeline {
     post {
         success {
             // Perform any post-deployment actions specific to the deployment pipeline
+            echo "Pipeline deployed successfully"
         }
     }
 }
