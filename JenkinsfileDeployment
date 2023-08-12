@@ -24,6 +24,8 @@ pipeline {
         stage('Deliver') {
             steps {
                 // Use this stage to release your artifact using your project's build tool
+                bat 'npm install'
+
                 bat 'npm start' // Replace with your actual release command
             }
         }
