@@ -35,7 +35,8 @@
     "@types/mongoose": "^5.11.97",
     "@types/passport": "^1.0.11",
     "@types/passport-local": "^1.0.34",
-    "@types/passport-local-mongoose": "^6.1.1"
+    "@types/passport-local-mongoose": "^6.1.1",
+    "nyc": "^15.1.0"
   },
   "description": "This is the readme file\r Project description\r added dependencies in package.json",
   "main": "index.js",
