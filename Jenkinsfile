@@ -7,12 +7,6 @@ pipeline {
     tools {
         nodejs "NodeJS" // Replace with the actual name
     }
-
-    triggers {
-        // This section specifies which events trigger your pipeline
-        githubPush() // This will trigger the pipeline on webhook push events
-        // You can add more triggers if needed
-    }
     
     stages {
         stage('Checkout') {
